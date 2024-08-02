@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1471,919</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1614,919</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -106,7 +106,7 @@
     <ui:CopyFile ContinueOnError="{x:Null}" Destination="[in_Config(&quot;DocPath&quot;).ToString + Path.GetFileName(in_TransactionItem)]" DisplayName="Copy the File" sap:VirtualizedContainerService.HintSize="354,186" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[in_TransactionItem]" />
     <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add the Queue Item" FolderPath="[in_Config(&quot;OrchestratorQueueFolder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="354,217" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[in_Config(&quot;OrchestratorQueueName&quot;).ToString]">
       <ui:AddQueueItem.ItemInformation>
-        <InArgument x:TypeArguments="x:String" x:Key="DocPath">[in_TransactionItem]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="DocPath">[in_Config("DocPath").ToString + Path.GetFileName(in_TransactionItem)]</InArgument>
       </ui:AddQueueItem.ItemInformation>
     </ui:AddQueueItem>
   </Sequence>
